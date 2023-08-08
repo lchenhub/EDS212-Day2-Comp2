@@ -30,6 +30,13 @@ dfdy
 ## Penguins plot
 
 ```{r}
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
-  geom_point()
+ggplot() +
+  geom_point(data = penguins, 
+            aes(x = flipper_length_mm, 
+                y = body_mass_g, 
+                color = species)) +
+  labs(x = "Flipper length (mm)", 
+       y = "Body mass (g)", 
+       title = "Palmer penguins body dimensions") +
+  theme_minimal()
 ```
